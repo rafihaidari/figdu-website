@@ -6,52 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FigDU - Figma Developer Utility</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                alert('Copied to clipboard!');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Copied!',
+                    text: 'Command copied to clipboard.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             });
         }
     </script>
+    <style>
+        :root {
+            --primary-color: #29abe2;
+        }
+
+        .primary-text {
+            color: var(--primary-color);
+        }
+
+        .primary-bg {
+            background-color: var(--primary-color);
+        }
+
+        .primary-border {
+            border-color: var(--primary-color);
+        }
+
+        .primary-hover:hover {
+            background-color: #1e8dc2;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100 text-gray-900">
     <div class="container mx-auto px-6 py-12 text-center">
-        <img src="/FigDu-Logo.png" width="80px" alt="SVG Image" />
-        <h1 style="color:#29abe2" class="text-4xl font-bold mb-4">FigDU - Figma Developer Utility</h1>
-        <p class="text-lg mb-6">Build Figma plugins effortlessly with FigDU.</p>
+        <!-- Logo -->
+        <img src="/FigDu-Logo.png" width="80px" alt="FigDU Logo" class="mx-auto mb-4" />
+        <h1 class="text-4xl font-bold mb-4 primary-text">FigDU - Figma Developer Utility</h1>
+        <p class="text-lg mb-6">Your all-in-one toolkit for creating powerful Figma plugins.</p>
 
-        <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl mx-auto">
-            <h2 class="text-2xl font-semibold mb-2">Installation</h2>
-            <p class="mb-2">Run the following command to create a new FigDU project</p>
-            <div class="bg-gray-200 text-gray-800 p-3 rounded-lg flex justify-between items-center">
-                <code>npx create-figdu</code>
-                <button onclick="copyToClipboard('npx create-figdu')" style="background-color:#29abe2; color: #fff;"
-                    class="ext-white px-3 py-1 rounded">Copy</button>
+        <!-- Installation Section -->
+        <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl mx-auto border-l-4 primary-border">
+            <h2 class="text-2xl font-semibold mb-4 primary-text">🚀 Installation</h2>
+            <p class="mb-4">Run the following command to create a new FigDU project:</p>
+            <div class="relative bg-gray-900 text-green-400 p-3 rounded-lg font-mono text-left">
+                <pre><code>npx create-figdu</code></pre>
+                <button onclick="copyToClipboard('npx create-figdu')"
+                    class="absolute top-2 right-2 primary-bg text-white px-3 py-1 rounded primary-hover transition">
+                    Copy
+                </button>
             </div>
-            <p class="mt-2">or</p>
-            <div class="bg-gray-200 text-gray-800 p-3 rounded-lg flex justify-between items-center">
-                <code>npm create figdu</code>
-                <button onclick="copyToClipboard('npm create figdu')" style="background-color:#29abe2; color: #fff;"
-                    class="text-white px-3 py-1 rounded">Copy</button>
+            <p class="mt-2 text-gray-600">or</p>
+            <div class="relative bg-gray-900 text-green-400 p-3 rounded-lg font-mono text-left">
+                <pre><code>npm create figdu</code></pre>
+                <button onclick="copyToClipboard('npm create figdu')"
+                    class="absolute top-2 right-2 primary-bg text-white px-3 py-1 rounded primary-hover transition">
+                    Copy
+                </button>
             </div>
         </div>
 
-        <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl mx-auto mt-6">
-            <h2 class="text-2xl font-semibold mb-2">Getting Started</h2>
-            <p>Navigate to your project directory:</p>
-            <div class="bg-gray-200 text-gray-800 p-3 rounded-lg flex justify-between items-center">
-                <code>cd your-figdu-project</code>
+        <!-- Getting Started Section -->
+        <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl mx-auto mt-6 border-l-4 primary-border">
+            <h2 class="text-2xl font-semibold mb-4 primary-text">🛠️ Getting Started</h2>
+            <p class="mb-4">Navigate to your project directory:</p>
+            <div class="relative bg-gray-900 text-green-400 p-3 rounded-lg font-mono text-left">
+                <pre><code>cd your-figdu-project</code></pre>
                 <button onclick="copyToClipboard('cd your-figdu-project')"
-                    style="background-color:#29abe2; color: #fff;" class="text-white px-3 py-1 rounded">Copy</button>
+                    class="absolute top-2 right-2 primary-bg text-white px-3 py-1 rounded primary-hover transition">
+                    Copy
+                </button>
             </div>
-            <p class="mt-2">Build the project:</p>
-            <div class="bg-gray-200 text-gray-800 p-3 rounded-lg flex justify-between items-center">
-                <code>npm run build</code>
-                <button onclick="copyToClipboard('npm run build')" style="background-color:#29abe2; color: #fff;"
-                    class="text-white px-3 py-1 rounded">Copy</button>
+
+            <p class="mt-4 mb-2">Build your project:</p>
+            <div class="relative bg-gray-900 text-green-400 p-3 rounded-lg font-mono text-left">
+                <pre><code>npm run build</code></pre>
+                <button onclick="copyToClipboard('npm run build')"
+                    class="absolute top-2 right-2 primary-bg text-white px-3 py-1 rounded primary-hover transition">
+                    Copy
+                </button>
             </div>
-            <p class="mt-2 mb-3" style="font-weight: bold;">(In 4 easy Steps)</p>
+
+            <p class="mt-4 mb-2">Watch for changes and rebuild automatically:</p>
+            <div class="relative bg-gray-900 text-green-400 p-3 rounded-lg font-mono text-left">
+                <pre><code>npm run watch</code></pre>
+                <button onclick="copyToClipboard('npm run watch')"
+                    class="absolute top-2 right-2 primary-bg text-white px-3 py-1 rounded primary-hover transition">
+                    Copy
+                </button>
+            </div>
+
+            <p class="mt-6 mb-3 text-lg font-semibold">(In 4 Easy Steps)</p>
             <ul class="list-disc list-inside text-left mx-auto w-max">
                 <li>Go to the <b>Plugins</b> menu in Figma.</li>
                 <li>Select <b>Development</b> > <b>Import plugin from manifest</b>.</li>
@@ -60,18 +110,20 @@
             </ul>
         </div>
 
+        <!-- GitHub Button -->
         <div class="mt-8">
             <a href="https://github.com/rafihaidari/figdu" target="_blank"
-                style="background-color:#29abe2; color: #fff;"
-                class="text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-[#1b87b8]">Visit
-                GitHub Repository</a>
+                class="inline-block primary-bg text-white px-6 py-3 rounded-lg text-lg font-semibold primary-hover transition">
+                Visit GitHub Repository
+            </a>
         </div>
 
+        <!-- Footer Section -->
         <div class="mt-6 text-gray-700">
-            <p>Have questions? Contact me at <a href="mailto:hello.rafihaidari@gmail.com" style="color:#29abe2;"
-                    class="font-semibold">hello.rafihaidari@gmail.com</a></p>
-            <p class="mt-2">The documentation will be added soon with tons of already created components.</p>
-
+            <p>Have questions? Contact me at <a href="mailto:hello.rafihaidari@gmail.com"
+                    class="font-semibold primary-text hover:underline">
+                    hello.rafihaidari@gmail.com</a></p>
+            <p class="mt-2">The documentation will be added soon with tons of pre-built components.</p>
         </div>
     </div>
 </body>
