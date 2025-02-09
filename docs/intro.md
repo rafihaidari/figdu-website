@@ -40,7 +40,7 @@ cd your-figdu-project
 Run the development server:
 
 ```bash
-npm run dev
+npm run watch
 ```
 
 This command starts a local development environment, allowing you to build your plugin interactively.
