@@ -1,0 +1,195 @@
+---
+sidebar_position: 4
+---
+
+# Form Components
+
+The **Form Components** in Chakra UI provide a wide range of UI elements for building interactive forms. Below are examples and usage guidelines for **Input**, **Button**, **Checkbox**, **Radio**, **Select**, and **Spinner** in Figdu.
+
+---
+
+## Input
+
+The **Input** component is used to capture text input from users. It supports various variants like `subtle` and `outline`.
+
+### Basic Usage
+
+Here’s how you can use the `Input` component with different variants:
+
+```jsx title="Input Example"
+import { HStack, Input, Field } from "@chakra-ui/react";
+
+const Demo = () => {
+  return (
+    <HStack gap="10" width="full">
+      <Field label="Email" required>
+        <Input placeholder="me@example.com" variant="subtle" />
+      </Field>
+      <Field label="Email" required>
+        <Input placeholder="me@example.com" variant="outline" />
+      </Field>
+    </HStack>
+  );
+};
+```
+
+### Key Props
+
+- **`variant`**: Defines the style of the input (`subtle`, `outline`, etc.).
+- **`placeholder`**: The placeholder text displayed in the input field.
+- **`required`**: Marks the input as required.
+
+---
+
+## Button
+
+The **Button** component is used to trigger actions or events. It supports different variants like `solid` and `outline`.
+
+### Basic Usage
+
+Here’s how you can use the `Button` component with different variants:
+
+```jsx title="Button Example"
+import { Button, HStack } from "@chakra-ui/react";
+
+const Demo = () => {
+  return (
+    <HStack>
+      <Button colorPalette="teal" variant="solid">
+        Email
+      </Button>
+      <Button colorPalette="teal" variant="outline">
+        Call us
+      </Button>
+    </HStack>
+  );
+};
+```
+
+### Key Props
+
+- **`variant`**: Defines the style of the button (`solid`, `outline`, etc.).
+- **`colorPalette`**: Sets the color scheme of the button (`teal`, `blue`, etc.).
+
+---
+
+## Checkbox
+
+The **Checkbox** component is used to allow users to select one or more options.
+
+### Basic Usage
+
+Here’s how you can use the `Checkbox` component:
+
+```jsx title="Checkbox Example"
+import { Checkbox } from "@/components/ui/checkbox";
+
+const Demo = () => {
+  return <Checkbox>Accept terms and conditions</Checkbox>;
+};
+```
+
+### Key Props
+
+- **`defaultChecked`**: Sets the initial checked state of the checkbox.
+- **`disabled`**: Disables the checkbox.
+
+---
+
+## Radio
+
+The **Radio** component is used to allow users to select a single option from a list.
+
+### Basic Usage
+
+Here’s how you can use the `Radio` component:
+
+```jsx title="Radio Example"
+import { HStack } from "@chakra-ui/react";
+import { Radio, RadioGroup } from "@/components/ui/radio";
+
+const Demo = () => {
+  return (
+    <RadioGroup defaultValue="1">
+      <HStack gap="6">
+        <Radio value="1">Option 1</Radio>
+        <Radio value="2">Option 2</Radio>
+        <Radio value="3">Option 3</Radio>
+      </HStack>
+    </RadioGroup>
+  );
+};
+```
+
+### Key Props
+
+- **`defaultValue`**: Sets the initially selected radio option.
+- **`value`**: The value associated with each radio option.
+
+---
+
+## Select
+
+The **Select** component is used to allow users to choose an option from a dropdown menu.
+
+### Basic Usage
+
+Here’s how you can use the `Select` component:
+
+```jsx title="Select Example"
+import {
+  NativeSelectField,
+  NativeSelectRoot,
+} from "@/components/ui/native-select";
+
+const Demo = () => {
+  return (
+    <NativeSelectRoot size="sm" width="240px">
+      <NativeSelectField placeholder="Select option">
+        <option value="react">React</option>
+        <option value="vue">Vue</option>
+        <option value="angular">Angular</option>
+        <option value="svelte">Svelte</option>
+      </NativeSelectField>
+    </NativeSelectRoot>
+  );
+};
+```
+
+### Key Props
+
+- **`size`**: Controls the size of the select (`sm`, `md`, `lg`, etc.).
+- **`placeholder`**: The placeholder text displayed in the select field.
+
+---
+
+## Spinner
+
+The **Spinner** component is used to indicate a loading state.
+
+### Basic Usage
+
+Here’s how you can use the `Spinner` component:
+
+```jsx title="Spinner Example"
+import { HStack, Spinner } from "@chakra-ui/react";
+
+const Demo = () => {
+  return (
+    <HStack gap="5">
+      <Spinner size="xs" color="teal" />
+      <Spinner size="sm" />
+      <Spinner size="md" />
+      <Spinner size="lg" />
+      <Spinner size="xl" />
+    </HStack>
+  );
+};
+```
+
+### Key Props
+
+- **`size`**: Controls the size of the spinner (`xs`, `sm`, `md`, `lg`, `xl`).
+- **`color`**: Sets the color of the spinner.
+
+---
