@@ -3,7 +3,7 @@ Here’s the completed and polished `README.md` for **FigDU** based on your prov
 ---
 
 <p align="center">
-  <img src="FigDu-Logo.png" alt="FigDU Logo" width="80px">
+  <img src="/static/img/FigDu-Logo.png" alt="FigDU Logo" width="80px">
 </p>
 
 <h1 align="center">FigDU - Figma Developer Utility</h1>
